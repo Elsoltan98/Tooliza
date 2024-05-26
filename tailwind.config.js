@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      inset: {
+        48: "14.05rem",
+      },
       colors: {
         primary: "#ffb91f",
         textPrimary: "#2457aa",

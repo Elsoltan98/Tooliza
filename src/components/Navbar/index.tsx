@@ -11,8 +11,9 @@ import {
   XMarkIcon,
   Bars3BottomLeftIcon,
 } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+
 import { navbarData } from "../../_mockup";
+import NavbarDropDown from "./Components/NavbarDropDown";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -45,26 +46,7 @@ export default function Example() {
                     <ChevronDownIcon className="size-6 pl-2 fill-white/60" />
                   </MenuButton>
                 </Menu>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navbarData.map((item) => (
-                      <Link
-                        reloadDocument={false}
-                        key={item.name}
-                        to={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-white text-textPrimary"
-                            : "text-textBlack hover:bg-white hover:text-textPrimary",
-                          "rounded-md px-3 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                <NavbarDropDown data={navbarData} />
               </div>
             </div>
           </div>
