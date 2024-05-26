@@ -12,17 +12,7 @@ import {
   Bars3BottomLeftIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Category", href: "#", current: false },
-  { name: "Shop", href: "#", current: false },
-  { name: "Elements", href: "#", current: false },
-  { name: "Pages", href: "#", current: false },
-  { name: "Blog", href: "#", current: false },
-  { name: "About Us", href: "#", current: false },
-  { name: "Contact Us", href: "#", current: false },
-];
+import { navbarData } from "../../_mockup";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -57,7 +47,7 @@ export default function Example() {
                 </Menu>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navbarData.map((item) => (
                       <Link
                         reloadDocument={false}
                         key={item.name}
@@ -81,7 +71,7 @@ export default function Example() {
 
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navbarData.map((item) => (
                 <DisclosureButton
                   key={item.name}
                   as="a"
