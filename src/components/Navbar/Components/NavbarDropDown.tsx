@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import DropDownMenu from "./DropDownMenu";
 import { NavbarItem } from "../../../utils/types";
@@ -9,10 +9,25 @@ interface NavbarDropDownProps {
 }
 
 const NavbarDropDown: FC<NavbarDropDownProps> = ({ data }) => {
+  const [navbarData, setNavbarData] = useState(data);
+
+  const toggleCurrent = (index: number) => {
+    setNavbarData((prevData) => {
+      return prevData.map((item, i) => {
+        if (i === index) {
+          item.current = !item.current;
+        } else {
+          item.current = false;
+        }
+        return item;
+      });
+    });
+  };
+
   return (
     <div className="hidden sm:ml-6 sm:block">
       <div className="flex space-x-4">
-        {data.map((item) => (
+        {data.map((item, index) => (
           <Fragment key={item.name}>
             {item.childs ? (
               <DropDownMenu {...item} />
@@ -21,6 +36,7 @@ const NavbarDropDown: FC<NavbarDropDownProps> = ({ data }) => {
                 reloadDocument={false}
                 key={item.name}
                 to={item.href}
+                onClick={() => toggleCurrent(index)}
                 className={classNames(
                   item.current
                     ? "bg-white text-textPrimary"
