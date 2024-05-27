@@ -64,7 +64,7 @@ export const navbarData = [
       { name: "Portfolio", href: "#", current: false },
     ],
   },
-  { name: "Blog", href: "#", current: false },
+  { name: "Blog", href: "/blog", current: false },
   { name: "About Us", href: "#", current: false },
   { name: "Contact Us", href: "#", current: false },
 ];

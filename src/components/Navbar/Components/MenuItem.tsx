@@ -14,7 +14,7 @@ const MenuItemComponent: FC<{ child: ChildItem }> = ({ child }) => {
           href={child.href}
           className={classNames(
             focus ? "bg-gray-100 text-gray-900" : "text-gray-700",
-            "block px-4 py-2 text-sm"
+            "block px-4 py-2 text-sm hover:bg-textPrimary hover:text-white"
           )}
         >
           {child.name}

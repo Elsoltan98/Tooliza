@@ -19,9 +19,9 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function CustomNavbar() {
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className="bg-white border-b-[.5px] border-b-gray-200">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ export default function Example() {
               {navbarData.map((item) => (
                 <DisclosureButton
                   key={item.name}
-                  as="a"
+                  as="link"
                   href={item.href}
                   className={classNames(
                     item.current

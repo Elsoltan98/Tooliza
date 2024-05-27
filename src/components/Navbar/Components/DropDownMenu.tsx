@@ -33,10 +33,10 @@ const DropDownMenu: FC<NavbarItem> = ({ name, current, childs }) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <MenuItems className="absolute left-0 top-[43px] z-10 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ">
           <div className="py-1">
             {childs?.map((child: ChildItem) => (
-              <MenuItemComponent key={child.href} child={child} />
+              <MenuItemComponent key={child.name} child={child} />
             ))}
           </div>
         </MenuItems>

@@ -35,10 +35,10 @@ const SubMenu: FC<{ child: ChildItem }> = ({ child }) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <MenuItems className="absolute left-48 -top-[4px] z-10 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <MenuItems className="absolute left-48 top-[0px] z-10 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {child.subChilds?.map((subChild) => (
-              <MenuItem key={subChild.href}>
+              <MenuItem key={subChild.name}>
                 {({ focus }) => (
                   <a
                     href={subChild.href}

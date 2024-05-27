@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import DropDownMenu from "./DropDownMenu";
 import { NavbarItem } from "../../../utils/types";
@@ -13,7 +13,7 @@ const NavbarDropDown: FC<NavbarDropDownProps> = ({ data }) => {
     <div className="hidden sm:ml-6 sm:block">
       <div className="flex space-x-4">
         {data.map((item) => (
-          <>
+          <Fragment key={item.name}>
             {item.childs ? (
               <DropDownMenu {...item} />
             ) : (
@@ -32,7 +32,7 @@ const NavbarDropDown: FC<NavbarDropDownProps> = ({ data }) => {
                 {item.name}
               </Link>
             )}
-          </>
+          </Fragment>
         ))}
       </div>
     </div>
