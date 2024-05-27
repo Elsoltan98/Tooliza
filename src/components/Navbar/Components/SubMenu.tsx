@@ -21,7 +21,9 @@ const SubMenu: FC<{ child: ChildItem }> = ({ child }) => {
         >
           {child.name}
           <ChevronRightIcon
-            className="mr-1 h-3 w-3 text-textBlack hover:text-white"
+            className={classNames(
+              "mr-1 h-3 w-3 hover:text-white text-textBlack"
+            )}
             aria-hidden="true"
           />
         </MenuButton>

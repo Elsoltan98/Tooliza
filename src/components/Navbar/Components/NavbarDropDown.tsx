@@ -9,13 +9,13 @@ interface NavbarDropDownProps {
 }
 
 const NavbarDropDown: FC<NavbarDropDownProps> = ({ data }) => {
-  const [navbarData, setNavbarData] = useState(data);
+  const [, setNavbarData] = useState(data);
 
   const toggleCurrent = (index: number) => {
     setNavbarData((prevData) => {
       return prevData.map((item, i) => {
         if (i === index) {
-          item.current = !item.current;
+          if (!item.current) item.current = !item.current;
         } else {
           item.current = false;
         }

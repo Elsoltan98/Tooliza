@@ -35,10 +35,10 @@ export default function CustomNavbar() {
               </div>
               <div className="flex flex-1 justify-center items-center sm:justify-start">
                 <Menu>
-                  <MenuButton className="inline-flex h-16 items-center gap-2  bg-primary py-1.5 px-20 text-15 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white">
+                  <MenuButton className="inline-flex h-16 items-center gap-2  bg-primary py-1.5 px-20 text-15 font-semibold text-textBlack shadow-inner shadow-white/10 focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white">
                     <Bars3BottomLeftIcon className="size-8 pr-2 text-textBlack" />
                     Shop By Categories
-                    <ChevronDownIcon className="size-6 pl-2 fill-white/60" />
+                    <ChevronDownIcon className="size-[25px] pl-2" />
                   </MenuButton>
                 </Menu>
                 <NavbarDropDown data={navbarData} />
