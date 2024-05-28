@@ -21,9 +21,7 @@ const SubMenu: FC<{ child: ChildItem }> = ({ child }) => {
         >
           {child.name}
           <ChevronRightIcon
-            className={classNames(
-              "mr-1 h-3 w-3 hover:text-white text-textBlack"
-            )}
+            className={classNames("mr-1 h-3 w-3")}
             aria-hidden="true"
           />
         </MenuButton>
@@ -38,7 +36,7 @@ const SubMenu: FC<{ child: ChildItem }> = ({ child }) => {
         leaveTo="transform opacity-0 scale-95"
       >
         <MenuItems className="absolute left-48 top-[0px] z-10 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+          <div>
             {child.subChilds?.map((subChild) => (
               <MenuItem key={subChild.name}>
                 {({ focus }) => (
@@ -46,7 +44,7 @@ const SubMenu: FC<{ child: ChildItem }> = ({ child }) => {
                     href={subChild.href}
                     className={classNames(
                       focus ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
+                      "block px-4 py-2 text-sm hover:bg-textPrimary hover:text-white"
                     )}
                   >
                     {subChild.name}
