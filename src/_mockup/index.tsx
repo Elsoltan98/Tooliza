@@ -1,4 +1,6 @@
-export const navbarData = [
+import { INavbarData } from "@/interfaces/INavbar";
+
+export const navbarData: INavbarData[] = [
   { name: "Home", href: "/", current: true },
   {
     name: "Category",
