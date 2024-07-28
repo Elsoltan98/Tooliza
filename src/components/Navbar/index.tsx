@@ -2,13 +2,17 @@ import { Disclosure, Menu, MenuButton } from "@headlessui/react";
 import {
   ChevronDownIcon,
   Bars3BottomLeftIcon,
+  MagnifyingGlassIcon,
+  UserCircleIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 
 import { navbarData } from "../../_mockup";
 import NavbarDropDown from "./Components/NavbarDropDown";
 import CustomSheet from "../CustomSheet";
+import ToolizaLogo from "@/assets/logo.svg";
 
-export default function CustomNavbar() {
+const CustomNavbar = () => {
   return (
     <Disclosure as="nav" className="bg-white border-b-[.5px] border-b-gray-200">
       {() => (
@@ -37,8 +41,22 @@ export default function CustomNavbar() {
                 </Menu>
                 <NavbarDropDown data={navbarData} />
               </div>
-              <div>
-                <CustomSheet />
+              <div className="flex items-center justify-between w-full">
+                <div className="flex space-x-5">
+                  <CustomSheet />
+                  <img src={ToolizaLogo} className="w-36 h-36" />
+                </div>
+                <div className="flex items-center space-x-4 mr-4">
+                  <p>
+                    <MagnifyingGlassIcon className="size-8" />
+                  </p>
+                  <p>
+                    <UserCircleIcon className="size-8" />
+                  </p>
+                  <p>
+                    <ShoppingCartIcon className="size-8" />
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -46,4 +64,6 @@ export default function CustomNavbar() {
       )}
     </Disclosure>
   );
-}
+};
+
+export default CustomNavbar;
